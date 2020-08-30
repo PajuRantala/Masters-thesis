@@ -1,0 +1,17 @@
+Next, source the init script, depending on which shell you use:
+bash: source $MNE_ROOT/bin/mne_setup_sh
+tcsh: source $MNE_ROOT/bin/mne_setup
+
+MNE software location set to:    /share/apps/mne/MNE-2.7.4-3506-Linux-x86_64
+MATLAB software not available
+
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/bin added to PATH
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/lib added to LD_LIBRARY_PATH
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/share/app-defaults/%N added to XUSERFILESEARCHPATH
+
+Note: Remember to set SUBJECTS_DIR and SUBJECT environment variables correctly.
+Note: FreeSurfer environment is needed to access tkmedit from mne_analyze.
+
+slurmstepd: error: execve(): /scratch/nbe/restmeg/data/code/watershed/watershed.sh: Text file busy
+srun: error: wsm140: task 0: Exited with exit code 26
+srun: Terminating job step 34392745.0

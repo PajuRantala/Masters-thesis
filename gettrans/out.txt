@@ -1,0 +1,47 @@
+ls
+MATLAB is selecting SOFTWARE OPENGL rendering.
+[?1h=
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+/scratch/nbe/restmeg/data/code/gettrans
+[H[J ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM8 - http://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+Initialising SPM...[?1h=...[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+...done
+
+SPM present working directory:
+	/scratch/nbe/restmeg/data/code/gettrans
+[H[JBye for now...
+
+[?1l>MATLAB is selecting SOFTWARE OPENGL rendering.
+[?1h=
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+/scratch/nbe/restmeg/data/code/gettrans
+[Warning: Name is nonexistent or not a directory:
+/share/apps/spm/8/external/yokogawa_meg_reader] 
+[> In path (line 109)
+  In addpath (line 94)
+  In calcFids (line 10)] 
+[?1l>

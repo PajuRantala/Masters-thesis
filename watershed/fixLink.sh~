@@ -1,0 +1,19 @@
+#!/bin/bash
+
+links=($(readlink *.surf))
+
+for l in "${links[@]}"
+do
+    varL=${l#./}
+    varL=${varL%%/*}
+    if [ "$varL" != "watershed" ]
+    then
+	surf=${l#*_}
+	surf=${surf%_surface}.surf
+	echo $surf
+	tgt=./${l#*bem/}
+	echo $tgt
+    fi
+    
+
+done

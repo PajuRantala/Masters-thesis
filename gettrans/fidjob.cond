@@ -1,0 +1,60 @@
+# job_2.cond -- Condor serial job submission script example
+
+# define job specific vars to be used later in this script
+# this should be an absolute path, or path from current working dir
+DIR=./
+
+include : /m/nbe/scratch/restmeg/data/code/gettrans/get_subj.sh |
+
+# setting up base directory for input, output, error and log files, executable path is not affected
+initialdir = $(DIR)
+
+# Define executable to run, it can be arch specific, or just some generic code
+executable = /m/nbe/scratch/restmeg/data/code/gettrans/getfid.sh
+
+# memory requirements, if any
+#request_memory = 512 MB
+
+# Condor universe. Default Vanilla, others haven't been configured/tested
+universe = vanilla
+
+# the file name specified with 'input' should contain any keyboard input the program requires
+# note, that command-line arguments are specified by the 'arguments' command below
+
+
+# and output files
+# note, that input, output, log and error files will/should be in 'initialdir' directory
+output = $(cluster).out
+
+# Errors, if any, will go here
+error = $(cluster).err
+
+# Always define log file, so that you know what haapened to your job(s)
+log = condor.log
+
+# email for job notifications, when it is completed or finished with errors
+#notify_user = firstname.lastname@aalto.fi
+#notification = Complete
+# Additional environment vars
+#environment = "PATH=$ENV(PATH):/home/user/bin"
+
+# replicate your current working environment on the worker node
+# useful when you have some specific vars like PATH, LD_LIBRARY_PATH or other defined with 'module'
+getenv = true
+
+# code arguments, if any
+arguments = $(subj)
+
+# Trasferring your files to a system the job is going to run on
+# that is the recommended method, to avoid NFS traffic
+should_transfer_files = yes
+transfer_input_files =  /m/nbe/scratch/restmeg/data/code/gettrans/getfid.m,/m/nbe/scratch/restmeg/data/code/gettrans/getfid.sh, $(subj)_T1w.nii
+when_to_transfer_output = ON_EXIT_OR_EVICT
+
+# Some specific requirements, if any. By default Condor will run job on a machine which has
+# the same architecture and operating system family as the machine from which it was submitted.
+# Here is we want the worker node would be Ubuntu 12.04 with 4 CPU cores or more
+#requirements = ((machine == "dione") ||
+#(machine == "thor")
+
+queue

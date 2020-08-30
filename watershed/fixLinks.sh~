@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for d in /m/nbe/scratch/restmeg/data/camcan/subjects_s3/*/bem/
+do
+
+    echo $d
+done

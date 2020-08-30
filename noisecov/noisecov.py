@@ -1,0 +1,13 @@
+import mne
+import sys
+
+
+
+def main(args):
+    fname = args[1]
+    raw = mne.io.Raw(fname)
+    cov = mne.compute_raw_covariance(raw)
+    cov.save(fname[:-4] + '_cov.fif')
+
+if __name__ == "__main__":
+    main(sys.argv)

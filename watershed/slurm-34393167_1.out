@@ -1,0 +1,222 @@
+Next, source the init script, depending on which shell you use:
+bash: source $MNE_ROOT/bin/mne_setup_sh
+tcsh: source $MNE_ROOT/bin/mne_setup
+
+MNE software location set to:    /share/apps/mne/MNE-2.7.4-3506-Linux-x86_64
+MATLAB software not available
+
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/bin added to PATH
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/lib added to LD_LIBRARY_PATH
+/share/apps/mne/MNE-2.7.4-3506-Linux-x86_64/share/app-defaults/%N added to XUSERFILESEARCHPATH
+
+Note: Remember to set SUBJECTS_DIR and SUBJECT environment variables correctly.
+Note: FreeSurfer environment is needed to access tkmedit from mne_analyze.
+
+sub-CC110033
+
+Running mri_watershed for BEM segmentation with the following parameters
+
+SUBJECTS_DIR = /scratch/nbe/restmeg/data/camcan/subjects_s3/
+Subject      = sub-CC110033
+Result dir   = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/watershed
+
+Temporary files removed.
+
+Mode:          use surfaceRAS to save surface vertex positions
+Mode:          Saving out BEM surfaces
+
+*********************************************************
+The input file is /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+The output file is /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/watershed/ws
+
+*************************WATERSHED**************************
+Sorting...
+      T1-weighted MRI image
+      modification of the preflooding height to 15 percent
+      Count how many 110 voxels are present :  260754
+
+      Find the largest 110-component...
+             heap usage = 352456 Kbytes.
+             removing small segments (less than 1 percent of maxarea).done
+      And identify it as the main brain basin...done
+      Main component: 249648 voxels
+      first estimation of the COG coord: x=128 y=129 z=105 r=75
+      first estimation of the main basin volume: 1772746 voxels
+      global maximum in x=148, y=112, z=69, Imax=255
+      CSF=18, WM_intensity=110, WM_VARIANCE=5
+      WM_MIN=110, WM_HALF_MIN=110, WM_HALF_MAX=110, WM_MAX=110 
+      preflooding height equal to 15 percent
+done.
+Analyze...
+
+      main basin size= 1534597 voxels, voxel volume =1.000 
+                     = 1534597 mmm3 = 1534.597 cm3
+done.
+PostAnalyze...
+      ***** 0 basin(s) merged in 1 iteration(s)
+      ***** 0 voxel(s) added to the main basin
+done.
+
+****************TEMPLATE DEFORMATION****************
+
+      second estimation of the COG coord: x=128,y=136, z=102, r=10062 iterations
+^^^^^^^^ couldn't find WM with original limits - expanding ^^^^^^
+
+   GLOBAL      CSF_MIN=0, CSF_intensity=7, CSF_MAX=89 , nb = 40689
+ Problem with the least square interpolation in GM_MIN calculation.
+   
+                     CSF_MAX  TRANSITION  GM_MIN  GM
+    GLOBAL     
+  before analyzing :    89,      65,        60,   80
+  after  analyzing :    50,      65,        65,   68
+      mri_strip_skull: done peeling brain
+      highly tesselated surface with 10242 vertices
+      matching...68 iterations
+
+*********************VALIDATION*********************
+curvature mean = -0.013, std = 0.012
+curvature mean = 68.265, std = 8.221
+
+No Rigid alignment: -atlas Mode Off (basic atlas / no registration)
+      before rotation: sse = 2.09, sigma = 3.31
+      after  rotation: sse = 2.09, sigma = 3.31
+Localization of inacurate regions: Erosion-Dilation steps
+      the sse mean is  2.13, its var is  2.89   
+      before Erosion-Dilatation  0.15% of inacurate vertices
+      after  Erosion-Dilatation  0.00% of inacurate vertices
+      Validation of the shape of the surface done.
+Scaling of atlas fields onto current surface fields
+
+********FINAL ITERATIVE TEMPLATE DEFORMATION********
+Compute Local values csf/gray
+Fine Segmentation...47 iterations
+
+      mri_strip_skull: done peeling brain
+
+Brain Size = 1604670 voxels, voxel volume = 1.000 mm3
+           = 1604670 mmm3 = 1604.670 cm3
+
+      outer skin surface matching...139 iterations
+
+******************************
+Saving /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/watershed/ws
+done
+mri_watershed utimesec    512.183196
+mri_watershed stimesec    0.825948
+mri_watershed ru_maxrss   359816
+mri_watershed ru_ixrss    0
+mri_watershed ru_idrss    0
+mri_watershed ru_isrss    0
+mri_watershed ru_minflt   485946
+mri_watershed ru_majflt   3
+mri_watershed ru_nswap    0
+mri_watershed ru_inblock  26256
+mri_watershed ru_oublock  35688
+mri_watershed ru_msgsnd   0
+mri_watershed ru_msgrcv   0
+mri_watershed ru_nsignals 0
+mri_watershed ru_nvcsw    1966
+mri_watershed ru_nivcsw   1385
+mri_watershed done
+
+mne_convert_surface version 1.14 compiled at Mar 29 2016 04:28:31
+
+surf input file       : sub-CC110033_brain_surface
+surf output file      : sub-CC110033_brain_surface
+
+Triangle file : created by rantala2 on Tue Aug 28 19:49:20 2018 nvert = 10242 ntri = 20480
+valid = 1  # volume info valid
+filename = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+volume = 256 256 256
+voxelsize = 1.0000 1.0000 1.0000
+xras   = -1.0000 0.0000 0.0000
+yras   = 0.0000 0.0000 -1.0000
+zras   = -0.0000 1.0000 0.0000
+cras   = 1.2078 34.8889 -9.8813
+Read sub-CC110033_brain_surface (10242 vertices 20480 triangles)
+Reading /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz...[done]
+Volume geometry information extracted from /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Mar 29 2016 04:28:31
+
+surf input file       : sub-CC110033_inner_skull_surface
+surf output file      : sub-CC110033_inner_skull_surface
+
+Triangle file : created by rantala2 on Tue Aug 28 19:49:20 2018 nvert = 10242 ntri = 20480
+valid = 1  # volume info valid
+filename = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+volume = 256 256 256
+voxelsize = 1.0000 1.0000 1.0000
+xras   = -1.0000 0.0000 0.0000
+yras   = 0.0000 0.0000 -1.0000
+zras   = -0.0000 1.0000 0.0000
+cras   = 1.2078 34.8889 -9.8813
+Read sub-CC110033_inner_skull_surface (10242 vertices 20480 triangles)
+Reading /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz...[done]
+Volume geometry information extracted from /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Mar 29 2016 04:28:31
+
+surf input file       : sub-CC110033_outer_skull_surface
+surf output file      : sub-CC110033_outer_skull_surface
+
+Triangle file : created by rantala2 on Tue Aug 28 19:53:18 2018 nvert = 10242 ntri = 20480
+valid = 1  # volume info valid
+filename = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+volume = 256 256 256
+voxelsize = 1.0000 1.0000 1.0000
+xras   = -1.0000 0.0000 0.0000
+yras   = 0.0000 0.0000 -1.0000
+zras   = -0.0000 1.0000 0.0000
+cras   = 1.2078 34.8889 -9.8813
+Read sub-CC110033_outer_skull_surface (10242 vertices 20480 triangles)
+Reading /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz...[done]
+Volume geometry information extracted from /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Mar 29 2016 04:28:31
+
+surf input file       : sub-CC110033_outer_skin_surface
+surf output file      : sub-CC110033_outer_skin_surface
+
+Triangle file : created by rantala2 on Tue Aug 28 19:53:18 2018 nvert = 10242 ntri = 20480
+valid = 1  # volume info valid
+filename = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+volume = 256 256 256
+voxelsize = 1.0000 1.0000 1.0000
+xras   = -1.0000 0.0000 0.0000
+yras   = 0.0000 0.0000 -1.0000
+zras   = -0.0000 1.0000 0.0000
+cras   = 1.2078 34.8889 -9.8813
+Read sub-CC110033_outer_skin_surface (10242 vertices 20480 triangles)
+Reading /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz...[done]
+Volume geometry information extracted from /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_surf2bem version 1.8 compiled at Mar 29 2016 04:28:17
+
+input  file #   1 : /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/watershed/sub-CC110033_outer_skin_surface / id = 4 / sigma N/A
+output file       : sub-CC110033-head.fif
+
+Triangle file : created by rantala2 on Tue Aug 28 19:53:18 2018 nvert = 10242 ntri = 20480
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[61440 distances done]
+valid = 1  # volume info valid
+filename = /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/mri/T1.mgz
+volume = 256 256 256
+voxelsize = 1.0000 1.0000 1.0000
+xras   = -1.0000 0.0000 0.0000
+yras   = 0.0000 0.0000 -1.0000
+zras   = -0.0000 1.0000 0.0000
+cras   = 1.2078 34.8889 -9.8813
+/scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/watershed/sub-CC110033_outer_skin_surface read. id = 4
+
+Topology checks skipped.
+sub-CC110033-head.fif written.
+Created /scratch/nbe/restmeg/data/camcan/subjects_s3//sub-CC110033/bem/sub-CC110033-head.fif
+
+Complete.
+
